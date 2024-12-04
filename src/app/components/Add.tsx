@@ -3,30 +3,8 @@
 
 import { useState } from "react";
 
-const Add = ({
-  productId,
-  variantId,
-  stockNumber,
-}: {
-  productId: string;
-  variantId: string;
-  stockNumber: number;
-}) => {
-  const [quantity, setQuantity] = useState(1);
-
-  // // TEMPORARY
-  // const stock = 4;
-
-  const handleQuantity = (type: "i" | "d") => {
-    if (type === "d" && quantity > 1) {
-      setQuantity((prev) => prev - 1);
-    }
-    if (type === "i" && quantity < stockNumber) {
-      setQuantity((prev) => prev + 1);
-    }
-  };
-
-
+const Add = ()=>{
+ 
 
 
 const [count , setCount] = useState(1)
@@ -68,7 +46,7 @@ const dercreament=()=>{
             <button
               className="cursor-pointer text-xl disabled:cursor-not-allowed disabled:opacity-20"
               onClick={increament}
-              disabled={quantity===stockNumber}
+            
             >
               +
             </button>

@@ -1,5 +1,5 @@
 import CategoryList from "./components/CategoryList"
-import ProductList from "./components/ProductList"
+import ProductList from "../app/components/ProductList"
 import Slider from "./components/Slider"
 
 const HomePage = () => {
@@ -13,7 +13,7 @@ const HomePage = () => {
   
       </div>  
       <div className="mt-24 ">
-        <h1 className="text-2xl mt-24 px-4  md:px-8  lg:px-32 xl:32 2xl:px-64 mb-12">Categories</h1>
+        <h1 className="text-2xl mt-24 px-4  md:px-8  lg:px-32 xl:32 2xl:px-64 ">Categories</h1>
 
       <CategoryList/>
   
@@ -21,8 +21,11 @@ const HomePage = () => {
       <div className="text-2xl mt-24 px-4  md:px-8  lg:px-20 xl:32 2xl:px-64">
         <h1 className="text-2xl mt-24 px-4  md:px-8  lg:px-20 xl:32 2xl:px-64"> New Products</h1>
 
+ 
+
       <ProductList/>
   
+      
       </div>     
     </div>
   )
