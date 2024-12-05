@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import products from "./products";
+import React from "react";
 const images = [
   {
     id: 1,
@@ -21,10 +22,23 @@ const images = [
     url: "https://images.pexels.com/photos/20832069/pexels-photo-20832069/free-photo-of-a-narrow-street-with-buildings-and-cars.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
   },
 ];
-
-const ProductImages = ({ items }: { items: any }) => {
+interface ProductImagesProps {
+  product: {
+    id: string;
+    productName: string;
+    imgUrl: StaticImageData | string;// Assuming it's a URL string for simplicity
+    category: string;
+    price: number;
+    shortDesc: string;
+    description: string;
+    reviews: { rating: number; text: string }[];
+    avgRating: number;
+  };
+}
+const ProductImages: React.FC<ProductImagesProps> = ({product}) => {
   const [index, setIndex] = useState(0);
 
+  
   return (
     <div className="">
      
@@ -55,6 +69,7 @@ const ProductImages = ({ items }: { items: any }) => {
           </div>
         ))}
       </div>
+      <h1>{product.productName}</h1>
     </div>
   );
 };
